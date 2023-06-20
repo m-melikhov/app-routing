@@ -35,7 +35,9 @@ export class PhrasesListComponent implements OnInit {
   }
 
   onSelect(phrase: PhraseInterfase): void {
-    this.router.navigate(['phrase', phrase.id]).catch()
+    this.router.navigate([phrase.id], {
+      relativeTo: this.activatedRoute
+    }).catch()
   }
 
   isSelected(phrase: PhraseInterfase): boolean {
